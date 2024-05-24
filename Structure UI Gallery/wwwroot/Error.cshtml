@@ -1,0 +1,26 @@
+﻿@*  Structure UI Demo | stru.ca | Copyright Neural Systems Inc.  *@
+
+@page  "/Error"
+@attribute [ResponseCache(CacheProfileName = "Never")]
+
+@using Structureˉui.Gallery;
+
+<html>
+<head>
+    @if (Settings.Googleˉanalyticsˉenabled)
+    {
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=@Settings.Googleˉanalyticsˉmeasurementˉid"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '@Settings.Googleˉanalyticsˉmeasurementˉid');
+        </script>
+    }
+</head>
+<body>
+    <h1 class="text-danger">Ooooh, Unexpected error</h1>
+    <h2 class="text-danger">Well, this thing should never appear to anyone but...  :(</h2>    
+</body>
+</html>

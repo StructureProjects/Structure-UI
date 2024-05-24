@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup Label="Globals">
+	  <SccProjectName></SccProjectName>
+	  <SccProvider></SccProvider>
+	  <SccAuxPath></SccAuxPath>
+	  <SccLocalPath></SccLocalPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>Structureˉui.Gallery</RootNamespace>
+		<AssemblyName>Structure-UI-Gallery</AssemblyName>
+		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BuildWebCompiler" Version="1.12.405" />
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Content Remove="wwwroot\App\Home.css" />
+	  <Content Remove="wwwroot\App\Home.js" />
+	  <Content Remove="wwwroot\App\Home.js.map" />
+	  <Content Remove="wwwroot\App\Home.min.css" />
+	  <Content Remove="wwwroot\App\Home.min.debug.js" />
+	  <Content Remove="wwwroot\App\Home.min.js" />
+	  <Content Remove="wwwroot\App\Home.scss" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Start.cs" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<Content Update=".filenesting.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</Content>
+		<Content Update="tsconfig.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</Content>
+			<Content Update="compilerconfig.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Include="wwwroot\Home.css" />
+	  <None Include="wwwroot\Home.min.css" />
+	  <None Include="wwwroot\Home.scss" />
+	</ItemGroup>
+
+</Project>

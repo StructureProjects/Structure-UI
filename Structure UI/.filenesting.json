@@ -1,0 +1,51 @@
+{
+  "help": "https://go.microsoft.com/fwlink/?linkid=866610",
+  "dependentFileProviders":
+  {
+    "add":
+    {
+      "fileToFile":
+      {
+        "add":
+        {
+          ".filenesting.json":
+          [
+            "Build Info"
+          ],
+          ".gitignore":
+          [
+            "Build Info"
+          ],
+          "compilerconfig.json":
+          [
+            "Build Info"
+          ],
+          "tsconfig.json":
+          [
+            "Build Info"
+          ],
+          "File List.json":
+          [
+            "Build Info"
+          ],
+          "File List.Deploy.txt":
+          [
+            "Build Info"
+          ],
+          "Structure UI.js":
+          [
+            "Structure UI.d.ts"
+          ],
+          "Structure UI.d.ts":
+          [
+            "Build Info"
+          ],
+          "Structure UI.tsbuildinfo":
+          [
+            "Build Info"
+          ]
+        }
+      }
+    }
+  }
+}

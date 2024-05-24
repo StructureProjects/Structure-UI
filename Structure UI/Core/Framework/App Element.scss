@@ -1,0 +1,16 @@
+﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
+
+/**
+    The <app-> element is usually absolute position (when it covers the entire page), 
+    most of the stuff in it is set to sticky, this combination simplifies the layout 
+    and reduces complexity.
+*/
+app-
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    user-select: none;
+}

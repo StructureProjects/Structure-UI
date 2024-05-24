@@ -1,0 +1,79 @@
+{
+  "help": "https://go.microsoft.com/fwlink/?linkid=866610",
+  "dependentFileProviders":
+  {
+    "add":
+    {
+      "extensionToExtension":
+      {
+        "add":
+        {
+          ".d.ts":
+          [
+            ".ts",
+            ".tsx"
+          ],
+          ".tsbuildinfo":
+          [
+            ".ts",
+            ".tsx"
+          ],
+          ".tsx":
+          [
+            ".cshtml"
+          ],
+          ".ts":
+          [
+            ".cshtml"
+          ],
+          ".js":
+          [
+            ".cshtml"
+          ],
+          ".scss":
+          [
+            ".cshtml"
+          ],
+          ".css":
+          [
+            ".cshtml"
+          ],
+          ".appcache":
+          [
+            ".cshtml"
+          ]
+        }
+      },
+      "fileToFile":
+      {
+        "add":
+        {
+          ".filenesting.json":
+          [
+            "Build Info"
+          ],
+          ".gitignore":
+          [
+            "Build Info"
+          ],
+          "compilerconfig.json":
+          [
+            "Build Info"
+          ],
+          "tsconfig.json":
+          [
+            "Build Info"
+          ],
+          "File List.json":
+          [
+            "Build Info"
+          ],
+          "File List.Deploy.txt":
+          [
+            "Build Info"
+          ]
+        }
+      }
+    }
+  }
+}

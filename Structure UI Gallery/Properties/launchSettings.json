@@ -1,0 +1,17 @@
+{
+  "profiles":
+  {
+    "Demo Structure UI":
+    {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:64155/",
+      "environmentVariables":
+      {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:64155/",
+      "sslPort": 0
+    }
+  }
+}

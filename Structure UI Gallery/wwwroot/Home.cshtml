@@ -1,0 +1,38 @@
+﻿@*  Structure UI Demo | stru.ca | Copyright Neural Systems Inc.  *@
+
+@page "/"
+@attribute [ResponseCache(CacheProfileName = "Static Content")]
+
+@using Structureˉui.Gallery;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo : Structure UI</title>
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <link rel="icon" href="~/Shared/Logos/Structure UI Logo - 470x470.png">
+
+    <link href="/Home.css" rel="stylesheet" />    
+    <script src="/Home.js"></script>
+
+    @if (Settings.Googleˉanalyticsˉenabled)
+    {
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=@Settings.Googleˉanalyticsˉmeasurementˉid"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+            gtag('config', '@Settings.Googleˉanalyticsˉmeasurementˉid');
+        </script>
+    }
+    <script>
+        var Developmentˉmode = Boolean('@Settings.Developmentˉmode')
+        var Version = '@Settings.Version'
+    </script>
+</head>
+<body>
+    <app- id='App' View='__Start_' />
+</body>
+</html>

@@ -1,0 +1,11 @@
+﻿The JS code is minified during the deployment with the Google Closure compiler, you must have the 
+compiler installed if you want to minify the code during deployment.
+https://github.com/google/closure-compiler/wiki/Releases
+
+To install the compiler:
+
+1- Open PowerShell
+2- Run this:
+
+	cd | Get-Variable HOME -valueOnly
+	npm install google-closure-compiler

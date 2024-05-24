@@ -1,0 +1,43 @@
+﻿{
+  "compilerOptions":
+  {
+    "sourceMap": true,
+    "module": "None",
+    "target": "ES2021",
+    "jsx": "react",
+    "jsxFactory": "_UI",
+    "jsxFragmentFactory": "_UI_Fragment",
+
+    "alwaysStrict": true,
+    "allowJs": false,
+    "exactOptionalPropertyTypes": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "useUnknownInCatchVariables": true,
+    "preserveConstEnums": false,
+
+    "outFile": "./Structure UI.js", // Concatenate and emit output to single file.
+    "composite": true,
+    "declaration": true
+  },
+
+  "include":
+  [
+    "Core/**/*",
+    "Elements/**/*"
+  ],
+
+  "exclude":
+  [
+    "Core/Install/Install - Service Worker.tsx"
+  ],
+
+  "compileOnSave": true
+}

@@ -1,0 +1,15 @@
+{
+  "profiles":
+  {
+    "Structure UI Gallery - Deploy":
+    {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables":
+      {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:59059;http://localhost:59060"
+    }
+  }
+}

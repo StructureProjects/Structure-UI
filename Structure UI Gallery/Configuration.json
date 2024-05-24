@@ -1,0 +1,19 @@
+{
+  "Logging":
+  {
+    "LogLevel":
+    {
+      "Default": "Debug",
+      "System": "Warning",
+      "Microsoft": "Warning"
+    }
+  },
+
+  "Version": "_Version_Replace_",
+
+  "Google Analytics":
+  {
+    "Enabled": "false",
+    "Measurement Id": ""
+  }
+}

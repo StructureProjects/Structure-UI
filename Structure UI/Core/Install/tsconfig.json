@@ -1,0 +1,31 @@
+﻿{
+  "compilerOptions":
+  {
+    "removeComments": true, // Remove all comments except copy-right header comments beginning with /*!
+    "sourceMap": true, // Generates corresponding .map file.
+    "module": "None",
+    "target": "ES2021",
+    "lib":
+    [
+      "es2021",
+      "webworker"
+    ],
+    "jsx": "react", // Support JSX in .tsx files.
+    "jsxFactory": "_Element", // Specify the JSX factory function to use when targeting react JSX emit.
+    "jsxFragmentFactory": "_Fragment",
+    "allowJs": false, // Allow JavaScript files to be compiled.
+    "outFile": "./Install - Service Worker.js", // Concatenate and emit output to single file.
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "preserveConstEnums": false
+  },
+
+  "files":
+  [
+    "Install - Service Worker.tsx"
+  ],
+
+  "compileOnSave": true
+}

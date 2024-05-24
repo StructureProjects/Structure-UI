@@ -1,0 +1,4 @@
+﻿systemctl enable Structure-UI-Gallery.Next.service
+systemctl daemon-reload
+
+ln -s /etc/apache2/sites-available/Next.Gallery.Stru.ca.conf /etc/apache2/sites-enabled/Next.Gallery.Stru.ca.conf 
