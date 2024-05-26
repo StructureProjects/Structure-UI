@@ -1,0 +1,16 @@
+﻿// Structure UI : Copyright Neural Systems Inc.
+
+$Link: 'l-';
+
+#{$Link}
+{
+    display: inline-block;
+    position: sticky;
+    color: #3965B5;
+    cursor: pointer;
+
+    &:hover
+    {
+        color: black;
+    }
+}
