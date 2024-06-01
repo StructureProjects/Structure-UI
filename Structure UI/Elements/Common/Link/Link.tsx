@@ -23,9 +23,7 @@ module Structureˉui
             Uiˉelement.Convertˉattributes(this, Attributes)
 
             if (Attributes.Action != undefined || Attributes.Url != undefined)
-            {
-                this.addEventListener('click', this.Onˉclick)
-
+            {               
                 this.Action = Attributes.Action
                 delete Attributes.Action
 
@@ -35,6 +33,16 @@ module Structureˉui
 
             this.Newˉtab = Attributes.Newˉtab
             delete Attributes.Newˉtab
+        }
+
+        connectedCallback()
+        {
+            this.addEventListener('click', this.Onˉclick)
+        }
+        
+        disconnectedCallback()
+        {
+            this.removeEventListener('click', this.Onˉclick)
         }
 
         Onˉclick = (Clickˉevent: MouseEvent): void =>

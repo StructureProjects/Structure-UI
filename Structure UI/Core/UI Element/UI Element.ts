@@ -89,6 +89,10 @@ module Structureˉui
                         Parentˉelement.appendChild(Results)
                     }
                 }
+                else if (Childˉelement instanceof DocumentFragment)
+                {
+                    Parentˉelement.appendChild(Childˉelement)
+                }
                 else if (Childˉelement != undefined)
                 {
                     let Asyncˉelement = Childˉelement as Promise<any>

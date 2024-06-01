@@ -60,4 +60,9 @@
 	  <None Include="wwwroot\Home.scss" />
 	</ItemGroup>
 
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\App\Layout\" />
+	</ItemGroup>
+
 </Project>

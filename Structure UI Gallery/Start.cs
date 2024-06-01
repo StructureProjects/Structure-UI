@@ -1,4 +1,4 @@
-﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
+﻿// Structure UI Gallery | stru.ca | Copyright Neural Systems Inc
 
 #region Namespaces
 using Microsoft.AspNetCore.Builder;

@@ -1,4 +1,4 @@
-﻿@*  Structure UI Demo | stru.ca | Copyright Neural Systems Inc.  *@
+﻿@*  Structure UI Gallery | stru.ca | Copyright Neural Systems Inc.  *@
 
 @page "/"
 @attribute [ResponseCache(CacheProfileName = "Static Content")]
@@ -9,9 +9,11 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Demo : Structure UI</title>
+    <title>Structure UI Gallery</title>
+
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <link rel="icon" href="~/Shared/Logos/Structure UI Logo - 470x470.png">
+    <link rel="manifest" href="manifest.json">
 
     <link href="/Home.css" rel="stylesheet" />    
     <script src="/Home.js"></script>
@@ -33,6 +35,6 @@
     </script>
 </head>
 <body>
-    <app- id='App' View='__Start_' />
+    <app- View='__Start_' />
 </body>
 </html>
