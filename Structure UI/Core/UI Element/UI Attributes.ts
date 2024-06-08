@@ -1,6 +1,6 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     /**
      * These are the items repeated in most Structure UI tag, example: <Panel Id="abc", Style="…" … />

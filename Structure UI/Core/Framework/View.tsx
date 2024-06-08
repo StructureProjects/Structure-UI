@@ -1,6 +1,6 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     /**
      * A view is a chunk of UI markup and code, imagine it as the JSX equivalent of 

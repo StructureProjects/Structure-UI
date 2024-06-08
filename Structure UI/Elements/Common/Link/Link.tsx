@@ -1,45 +1,94 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     export interface Linkˉattributes extends Uiˉattributes
     {
-        Url?: string
+        // The code to run when the url is clicked, will receive a standard click event         
         Action?: (Clickˉevent: MouseEvent) => void
-        Newˉtab?: boolean
+
+        // Disable the url, still visible, but not clickable.
+        Disabled?: boolean
+
+        // Is it currently selected, if yes, you can render it in different colors if needed.
+        Selected?: boolean
     }
 
     export class Link extends Uiˉelement<Linkˉattributes>
     {
         static readonly Tagˉname = 'l-'
 
-        Url?: string
-        Newˉtab?: boolean
         Action?: (Clickˉevent: MouseEvent) => void
 
-        public override Execute(Attributes: Linkˉattributes, Children: any[]): void 
+        get Disabled(): boolean
+        {
+            if (this.getAttribute('d') != undefined)
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
+        }
+        set Disabled(value: boolean)
+        {
+            if (value !== false && value != undefined)
+            {
+                this.setAttribute('d', '')
+            }
+            else
+            {
+                this.removeAttribute('d')
+            }
+        }
+
+        get Selected(): boolean
+        {
+            if (this.getAttribute('s') != undefined)
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
+        }
+        set Selected(value: boolean)
+        {
+            if (value !== false && value != undefined)
+            {
+                this.setAttribute('s', '')
+            }
+            else
+            {
+                this.removeAttribute('s')
+            }
+        }
+
+        override Execute(Attributes: Linkˉattributes, Children: any[]): void
         {
             Uiˉelement.Appendˉchildren(this, Children)
             Uiˉelement.Convertˉattributes(this, Attributes)
 
-            if (Attributes.Action != undefined || Attributes.Url != undefined)
-            {               
+            if (Attributes != undefined)
+            {
                 this.Action = Attributes.Action
                 delete Attributes.Action
+                
+                this.Selected = Attributes.Selected
+                delete Attributes.Selected
 
-                this.Url = Attributes.Url
-                delete Attributes.Url
+                this.Disabled = Attributes.Disabled
+                delete Attributes.Disabled
             }
-
-            this.Newˉtab = Attributes.Newˉtab
-            delete Attributes.Newˉtab
         }
 
         connectedCallback()
         {
             this.addEventListener('click', this.Onˉclick)
         }
-        
+
         disconnectedCallback()
         {
             this.removeEventListener('click', this.Onˉclick)
@@ -47,17 +96,9 @@ module Structureˉui
 
         Onˉclick = (Clickˉevent: MouseEvent): void =>
         {
-            if (this.Action != undefined)
+            if (this.Action != undefined && this.Disabled != true)
             {
                 this.Action(Clickˉevent)
-            }
-            else if (this.Newˉtab == true)
-            {
-                window.open(this.Url, '_blank', 'noreferrer');
-            }
-            else
-            {
-                location.href = this.Url
             }
         }
     }

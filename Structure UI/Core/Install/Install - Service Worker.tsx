@@ -1,6 +1,6 @@
 ﻿// Structure UI : Copyright Neural Systems Inc.
 
-module Structureˉui
+namespace Structureˉui
 {
     declare var self: ServiceWorkerGlobalScope;
 

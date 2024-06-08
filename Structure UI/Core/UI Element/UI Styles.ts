@@ -1,6 +1,6 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     /**
      * All the styles used by the UI Element -> Styles attribute.
@@ -70,6 +70,7 @@ module Structureˉui
         Letterˉspacing?: string
         Direction?: string
         Lineˉheight?: string
+        Textˉdecoration?: string
 
         // Display
         Cursor?: string

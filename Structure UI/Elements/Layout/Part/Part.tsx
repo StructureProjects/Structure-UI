@@ -1,6 +1,6 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     export interface Partˉattributes extends Uiˉattributes
     {

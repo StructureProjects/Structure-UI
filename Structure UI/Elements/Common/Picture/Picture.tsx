@@ -1,6 +1,6 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     export interface Pictureˉattributes extends Uiˉattributes
     {
@@ -13,9 +13,12 @@ module Structureˉui
 
         public override Execute (Attributes: Pictureˉattributes, Children: any[]): void 
         {
-            let Newˉpicture = document.createElement('img')                       
-            Newˉpicture.setAttribute('src', Attributes.Source)
-            delete Attributes.Source
+            let Newˉpicture = document.createElement('img')
+            if (Attributes.Source != undefined)
+            {
+                Newˉpicture.setAttribute('src', Attributes.Source)
+                delete Attributes.Source
+            }
 
             this.appendChild(Newˉpicture)
             Uiˉelement.Convertˉattributes(Newˉpicture, Attributes)

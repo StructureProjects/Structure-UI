@@ -1,6 +1,8 @@
 ﻿// Structure UI : Copyright Neural Systems Inc.
 
 $Link: 'l-';
+$linkˉselectedˉattribute: 's';
+$linkˉdisabledˉattribute: 'd';
 
 #{$Link}
 {
@@ -12,5 +14,15 @@ $Link: 'l-';
     &:hover
     {
         color: black;
+    }   
+
+    &[#{$linkˉselectedˉattribute}]
+    {
+        color: #cbc1c1;
+    }    
+
+    &[#{$linkˉdisabledˉattribute}]
+    {
+        color: gray;
     }
 }

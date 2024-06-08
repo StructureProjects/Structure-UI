@@ -44,9 +44,5 @@
 			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
 		</Content>
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Elements\Common\" />
-	</ItemGroup>
 	
 </Project>

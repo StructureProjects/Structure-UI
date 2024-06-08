@@ -1,7 +1,7 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
-{    
+namespace Structureˉui
+{
     /**
      * A map between the Styles of a UI Element, and the Html Styles.
      * 
@@ -70,6 +70,7 @@ module Structureˉui
         static readonly Direction = 'direction'
         static readonly Textˉrendering = 'textRendering'
         static readonly Lineˉheight = 'lineHeight'
+        static readonly Textˉdecoration = 'textDecoration'
 
         static readonly Cursor = 'cursor'
         static readonly Display = 'display'
@@ -124,7 +125,7 @@ module Structureˉui
         static readonly Borderˉwidth = 'borderWidth'
         static readonly Boxˉsizing = 'boxSizing'
         static readonly Boxˉshadow = 'boxShadow'
-        
+
         static readonly Overflow = 'overflow'
 
         static readonly Filter = 'filter'

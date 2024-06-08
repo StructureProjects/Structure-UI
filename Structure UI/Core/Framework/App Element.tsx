@@ -1,44 +1,53 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
+    export const Appˉreadyˉeventˉname = 'AppReady'
+    export interface Appˉreadyˉeventˉdetail
+    {
+        Viewˉname: string;
+    }
+
+
     /**
-     * <app- /> is an html element, this element goes inside the html document, it is 
-     * usually one per html document, but you can add more if needed.
-     * 
-     * Once the document is loaded, app will look for a JSX content and render that content. 
-     * 
-     * Attributes:
-     * View: Once the app is ready, it will search for the view by name and render it.
-     * Notes: 
-     *   - You need to provide the full view name with namespaces.
-     *   - If you minify the code and minify the object names, preserve that name.
-     *   - The easiest way (globalThis as any)['__my_view_name'] = my_view_name
+     * <app- />
+     * This is the root element for any app or website created with Structure UI. 
+     * It extends across the entire HTML page and displays Views made with Structure UI.
+     * It is automatically added to the HTML page.
      */
     export class Appˉelement extends HTMLElement
     {
         Currentˉview?: View
 
-        Start()
+        /**
+         * Locate the default (/) view from the view registry and display it.
+         * If a query string is present, display the view specified in the query string instead.
+         * Once the app is loaded and the view is displayed, trigger a ready event.
+         */
+        Start = (): void =>
         {
-            let Viewˉname: string = this.getAttribute('View')?.toString()
-            if (Viewˉname !== null)
+            let Viewˉname = undefined
+            if (window.location.search)
             {
-                let Viewˉtype = (globalThis as any)[Viewˉname]
-                this.Changeˉview(Viewˉtype)
+                const params = new URLSearchParams(window.location.search)
+                Viewˉname = params.get('View')
             }
 
-            let Onˉreadyˉname: string = this.getAttribute('Ready')?.toString()
-            if (Onˉreadyˉname !== null)
+            if (Viewˉname == undefined)
             {
-                let Onˉreadyˉtype = (globalThis as any)[Onˉreadyˉname]
-                if (Onˉreadyˉtype != null)
-                {
-                    Onˉreadyˉtype(this)
-                }
+                Viewˉname = '/'
             }
+
+            let Viewˉconstructor = View.Allˉviews.get(Viewˉname)
+            this.Changeˉview(Viewˉconstructor, undefined, false, false)
 
             window.addEventListener('popstate', this.Handleˉnavigationˉbuttons)
+
+            let Newˉappˉreadyˉevent = new CustomEvent<Appˉreadyˉeventˉdetail>(Appˉreadyˉeventˉname,
+                {
+                    detail: { Viewˉname: Viewˉname }
+                });
+            this.dispatchEvent(Newˉappˉreadyˉevent);
         }
 
         /**
@@ -49,8 +58,8 @@ module Structureˉui
          * @param Addˉtoˉhistory Do you want to record this change so you can go back to it with the back button.
          * @returns
          */
-        Changeˉview(Viewˉconstructor: { new(): View }, Parameters?: Map<string, string>, Changeˉurl: boolean = true,
-            Addˉtoˉhistory: boolean = true): void 
+        Changeˉview = (Viewˉconstructor: { new(): View }, Parameters?: Map<string, string>, Changeˉurl: boolean = true,
+            Addˉtoˉhistory: boolean = true): void =>
         {
             if (Viewˉconstructor == null)
             {
@@ -93,7 +102,7 @@ module Structureˉui
          * Going back to the previous view requires us to reverse the last view navigation.
          * @param Eventˉref The navigation event.
          */
-        private Handleˉnavigationˉbuttons(Eventˉref: PopStateEvent): void 
+        private Handleˉnavigationˉbuttons = (Eventˉref: PopStateEvent): void =>
         {
             let Viewˉname = ''
             let Parameters: Map<string, string>
@@ -109,14 +118,14 @@ module Structureˉui
                 Viewˉname = Queryˉstring[0]
                 Parameters = Queryˉstring[1]
             }
-            
+
             // Step 2: Change the view without affecting the state.
             let Viewˉconstructor = View.Allˉviews.get(Viewˉname)
             this.Changeˉview(Viewˉconstructor, Parameters, false, false)
         }
 
-        private Updateˉurlˉandˉnavigationˉhistory(Viewˉconstructor: { new(): View }, Parameters: Map<string, string>,
-            Changeˉurl: boolean, Addˉtoˉhistory: boolean): void 
+        private Updateˉurlˉandˉnavigationˉhistory = (Viewˉconstructor: { new(): View }, Parameters: Map<string, string>,
+            Changeˉurl: boolean, Addˉtoˉhistory: boolean): void =>
         {
             let Viewˉname = View.Allˉviewsˉreverseˉlookup.get(Viewˉconstructor)
 

@@ -8,11 +8,12 @@ namespace Structureˉui
 
     export class Break extends Uiˉelement<Breakˉattributes>
     {
-        static readonly Tagˉname = 'xx-'
+        static readonly Tagˉname = 'br-x'
 
-        public override Execute (Attributes: Breakˉattributes, Children: any[]): void 
+        public override Execute(Attributes: Breakˉattributes, Children: any[]): void 
         {
-            Uiˉelement.Convertˉattributes(this, Attributes)
+            let Brˉelement = document.createElement('br')
+            this.appendChild(Brˉelement)
         }
     }
 

@@ -1,6 +1,6 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     /**
     * The base class for all Structure UI Elements.
@@ -15,7 +15,7 @@ module Structureˉui
          * @param Children - The children of that element.
          * @returns - Returns the html element after the conversion, or nothing in some cases, up to you.
          */
-        public abstract Execute(Attributes: Uiˉattributes, Children: any[]): void
+        public abstract Execute(Attributes: Uiˉattributes, Children: any[]) : void
 
 
         public static Convertˉattributes(Parentˉhtmlˉelement: HTMLElement, Attributes: Uiˉattributes): void
@@ -51,7 +51,7 @@ module Structureˉui
             }
         }
 
-        public static Setˉstyle = (Styleˉattributes: Uiˉstyles, Targetˉhtmlˉelement: HTMLElement): void =>
+        public static Setˉstyle(Styleˉattributes: Uiˉstyles, Targetˉhtmlˉelement: HTMLElement): void 
         {
             for (let Styleˉname in Styleˉattributes)
             {
@@ -66,7 +66,7 @@ module Structureˉui
          * @param Parentˉelement - Append the child elements to this parent element.
          * @param Children - The child elements
          */
-        public static Appendˉchildren = (Parentˉelement: Node, Children: any[]): void =>
+        public static Appendˉchildren(Parentˉelement: Node, Children: any[]): void 
         {
             for (let Index: number = 0; Index < Children.length; Index++)
             {
@@ -101,7 +101,7 @@ module Structureˉui
             }
         }
 
-        private static Asyncˉelementˉrender = (Parentˉelement: Node, Childˉelement: HTMLElement) =>
+        private static Asyncˉelementˉrender(Parentˉelement: Node, Childˉelement: HTMLElement) 
         {
             Parentˉelement.appendChild(Childˉelement)
         }

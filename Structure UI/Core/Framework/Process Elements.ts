@@ -1,6 +1,6 @@
 ﻿// Structure UI | stru.ca | Copyright Neural Systems Inc
 
-module Structureˉui
+namespace Structureˉui
 {
     export function Processˉuiˉelement(Uiˉelement: any, Attributes: Uiˉattributes, ...Children: any[]): HTMLElement 
     {        
